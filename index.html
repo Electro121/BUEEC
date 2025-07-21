@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Website</title>
+    <title>Company Website with CMS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -581,6 +581,28 @@
             color: var(--accent);
         }
         
+        .footer-newsletter {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-newsletter h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-newsletter h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
         .footer-newsletter p {
             color: #adb5bd;
             margin-bottom: 1rem;
@@ -607,6 +629,12 @@
             text-align: center;
             color: #adb5bd;
             font-size: 0.9rem;
+        }
+        
+        /* Admin Fixes */
+        #nc-root {
+            min-height: 100vh;
+            background: #f8f9fa;
         }
         
         /* Responsive Design */
@@ -671,38 +699,6 @@
         }
     </style>
 </head>
-<script>
-  // Fetch events from CMS
-  fetch('/_data/events')
-    .then(response => response.json())
-    .then(events => {
-      const container = document.getElementById('events-container');
-      container.innerHTML = events.map(event => `
-        <div class="event-item">
-          <div class="event-date">
-            <span class="day">${new Date(event.date).getDate()}</span>
-            <span class="month">${new Date(event.date).toLocaleString('default', { month: 'short' }).toUpperCase()}</span>
-          </div>
-          <div class="event-content">
-            <h4>${event.title}</h4>
-            <div class="event-time">
-              <i class="far fa-clock"></i>
-              <span>${event.start_time} - ${event.end_time}</span>
-            </div>
-            <div class="event-location">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>${event.location}</span>
-            </div>
-            <p>${event.description}</p>
-            <div class="event-actions">
-              <a href="${event.registration_link || '#'}" class="btn btn-primary">Register Now</a>
-              <a href="#" class="btn btn-outline">Add to Calendar</a>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    });
-</script>
 <body>
     <!-- Navigation -->
     <nav>
@@ -715,6 +711,7 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="/admin">CMS Admin</a></li>
         </ul>
     </nav>
     
@@ -799,8 +796,8 @@
                 <p>Connect with industry experts, learn new skills, and network with peers at our upcoming events. All events are open to the public and feature valuable insights from thought leaders.</p>
             </div>
             
-            <div class="events-list">
-                <!-- Event 1 -->
+            <div id="events-list" class="events-list">
+                <!-- Events will be loaded dynamically from CMS -->
                 <div class="event-item">
                     <div class="event-date">
                         <span class="day">15</span>
@@ -817,54 +814,6 @@
                             <span>Tech Hub Conference Center</span>
                         </div>
                         <p>Join us for a full-day workshop on modern web development techniques, including React, Vue.js, and performance optimization.</p>
-                        <div class="event-actions">
-                            <a href="#" class="btn btn-primary">Register Now</a>
-                            <a href="#" class="btn btn-outline">Add to Calendar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 2 -->
-                <div class="event-item">
-                    <div class="event-date">
-                        <span class="day">28</span>
-                        <span class="month">OCT</span>
-                    </div>
-                    <div class="event-content">
-                        <h4>UX Design Conference</h4>
-                        <div class="event-time">
-                            <i class="far fa-clock"></i>
-                            <span>9:00 AM - 5:00 PM</span>
-                        </div>
-                        <div class="event-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Design Innovation Center</span>
-                        </div>
-                        <p>Learn from top UX designers about creating intuitive user experiences, conducting effective user research, and implementing design systems.</p>
-                        <div class="event-actions">
-                            <a href="#" class="btn btn-primary">Register Now</a>
-                            <a href="#" class="btn btn-outline">Add to Calendar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 3 -->
-                <div class="event-item">
-                    <div class="event-date">
-                        <span class="day">05</span>
-                        <span class="month">NOV</span>
-                    </div>
-                    <div class="event-content">
-                        <h4>Tech Leadership Summit</h4>
-                        <div class="event-time">
-                            <i class="far fa-clock"></i>
-                            <span>8:30 AM - 6:00 PM</span>
-                        </div>
-                        <div class="event-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Grand Convention Hall</span>
-                        </div>
-                        <p>A gathering of technology leaders to discuss the future of tech management, team building, and innovation strategies.</p>
                         <div class="event-actions">
                             <a href="#" class="btn btn-primary">Register Now</a>
                             <a href="#" class="btn btn-outline">Add to Calendar</a>
@@ -994,6 +943,12 @@
         </div>
     </footer>
     
+    <!-- CMS Admin Section -->
+    <div id="nc-root" style="display: none;"></div>
+    
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
     <script>
         // Mobile Navigation Toggle
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
@@ -1045,9 +1000,97 @@
             }
         });
         
-        // Event section CMS integration placeholder
-        // In a real implementation, this would fetch data from a CMS
-        console.log('Event section is CMS-powered. Content can be managed without coding.');
+        // Netlify Identity Widget
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+        
+        // Event section CMS integration
+        document.addEventListener('DOMContentLoaded', function() {
+            // In a real implementation, this would fetch data from a CMS
+            console.log('Event section is CMS-powered. Content can be managed without coding.');
+            
+            // Simulating CMS data fetch
+            setTimeout(() => {
+                const eventsList = document.getElementById('events-list');
+                eventsList.innerHTML = `
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">OCT</span>
+                        </div>
+                        <div class="event-content">
+                            <h4>Web Development Workshop</h4>
+                            <div class="event-time">
+                                <i class="far fa-clock"></i>
+                                <span>10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Tech Hub Conference Center</span>
+                            </div>
+                            <p>Join us for a full-day workshop on modern web development techniques, including React, Vue.js, and performance optimization.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary">Register Now</a>
+                                <a href="#" class="btn btn-outline">Add to Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">28</span>
+                            <span class="month">OCT</span>
+                        </div>
+                        <div class="event-content">
+                            <h4>UX Design Conference</h4>
+                            <div class="event-time">
+                                <i class="far fa-clock"></i>
+                                <span>9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Design Innovation Center</span>
+                            </div>
+                            <p>Learn from top UX designers about creating intuitive user experiences, conducting effective user research, and implementing design systems.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary">Register Now</a>
+                                <a href="#" class="btn btn-outline">Add to Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">05</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <div class="event-content">
+                            <h4>Tech Leadership Summit</h4>
+                            <div class="event-time">
+                                <i class="far fa-clock"></i>
+                                <span>8:30 AM - 6:00 PM</span>
+                            </div>
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Grand Convention Hall</span>
+                            </div>
+                            <p>A gathering of technology leaders to discuss the future of tech management, team building, and innovation strategies.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary">Register Now</a>
+                                <a href="#" class="btn btn-outline">Add to Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }, 1000);
+        });
     </script>
 </body>
 </html>
