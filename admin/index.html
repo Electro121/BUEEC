@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Content Manager</title>
+
+  <!-- Netlify Identity widget (for login) -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://unpkg.com/netlify-cms@^2.15.0/dist/netlify-cms.js"></script>
+
+  <!-- Netlify CMS App (this exposes window.CMS and auto-initializes) -->
+  <script src="https://unpkg.com/netlify-cms-app@^2.15.0/dist/netlify-cms.js"></script>
 </head>
 <body>
+  <!-- CMS will mount itself here -->
   <div id="nc-root"></div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof CMS !== 'undefined') {
-        CMS.init();
-      } else {
-        console.error('CMS is not defined');
-      }
-    });
-  </script>
 </body>
 </html>
