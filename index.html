@@ -635,6 +635,7 @@
         #nc-root {
             min-height: 100vh;
             background: #f8f9fa;
+            display: none; /* Initially hidden */
         }
         
         /* Responsive Design */
@@ -944,10 +945,13 @@
     </footer>
     
     <!-- CMS Admin Section -->
-    <div id="nc-root" style="display: none;"></div>
+    <div id="nc-root"></div>
     
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <!-- Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.15.0/dist/netlify-cms.js"></script>
     
     <script>
         // Mobile Navigation Toggle
@@ -1011,12 +1015,28 @@
             });
         }
         
-        // Event section CMS integration
+        // CMS Initialization - Fixed
         document.addEventListener('DOMContentLoaded', function() {
-            // In a real implementation, this would fetch data from a CMS
-            console.log('Event section is CMS-powered. Content can be managed without coding.');
+            // Initialize CMS if we're on the admin page
+            if (window.location.pathname === '/admin' && typeof CMS !== 'undefined') {
+                // Hide main content
+                document.querySelector('nav').style.display = 'none';
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.querySelector('footer').style.display = 'none';
+                
+                // Show the CMS root
+                document.getElementById('nc-root').style.display = 'block';
+                
+                // Initialize CMS
+                CMS.init();
+                
+                console.log('CMS initialized successfully!');
+            }
             
-            // Simulating CMS data fetch
+            // Event section CMS integration
+            // In a real implementation, this would fetch data from a CMS
             setTimeout(() => {
                 const eventsList = document.getElementById('events-list');
                 eventsList.innerHTML = `
