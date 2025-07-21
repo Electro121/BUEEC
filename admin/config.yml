@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "_data/events"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+      - { label: "Start Time", name: "start_time", widget: "string" }
+      - { label: "End Time", name: "end_time", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Registration Link", name: "registration_link", widget: "string", required: false }
