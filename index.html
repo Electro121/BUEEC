@@ -671,6 +671,38 @@
         }
     </style>
 </head>
+<script>
+  // Fetch events from CMS
+  fetch('/_data/events')
+    .then(response => response.json())
+    .then(events => {
+      const container = document.getElementById('events-container');
+      container.innerHTML = events.map(event => `
+        <div class="event-item">
+          <div class="event-date">
+            <span class="day">${new Date(event.date).getDate()}</span>
+            <span class="month">${new Date(event.date).toLocaleString('default', { month: 'short' }).toUpperCase()}</span>
+          </div>
+          <div class="event-content">
+            <h4>${event.title}</h4>
+            <div class="event-time">
+              <i class="far fa-clock"></i>
+              <span>${event.start_time} - ${event.end_time}</span>
+            </div>
+            <div class="event-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>${event.location}</span>
+            </div>
+            <p>${event.description}</p>
+            <div class="event-actions">
+              <a href="${event.registration_link || '#'}" class="btn btn-primary">Register Now</a>
+              <a href="#" class="btn btn-outline">Add to Calendar</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    });
+</script>
 <body>
     <!-- Navigation -->
     <nav>
