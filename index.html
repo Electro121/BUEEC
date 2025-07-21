@@ -950,9 +950,6 @@
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
-    <!-- Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.15.0/dist/netlify-cms.js"></script>
-    
     <script>
         // Mobile Navigation Toggle
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
@@ -1016,9 +1013,8 @@
         }
         
         // CMS Initialization - Fixed
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize CMS if we're on the admin page
-            if (window.location.pathname === '/admin' && typeof CMS !== 'undefined') {
+        function initializeCMS() {
+            if (typeof CMS !== 'undefined') {
                 // Hide main content
                 document.querySelector('nav').style.display = 'none';
                 document.querySelectorAll('section').forEach(section => {
@@ -1033,84 +1029,96 @@
                 CMS.init();
                 
                 console.log('CMS initialized successfully!');
+            } else {
+                // If CMS is not defined, retry after a short delay
+                setTimeout(initializeCMS, 100);
             }
-            
-            // Event section CMS integration
-            // In a real implementation, this would fetch data from a CMS
-            setTimeout(() => {
-                const eventsList = document.getElementById('events-list');
-                eventsList.innerHTML = `
-                    <div class="event-item">
-                        <div class="event-date">
-                            <span class="day">15</span>
-                            <span class="month">OCT</span>
+        }
+        
+        // Initialize CMS only on the admin page
+        if (window.location.pathname === '/admin') {
+            // Load CMS script dynamically
+            const cmsScript = document.createElement('script');
+            cmsScript.src = 'https://unpkg.com/netlify-cms@^2.15.0/dist/netlify-cms.js';
+            cmsScript.onload = initializeCMS;
+            document.head.appendChild(cmsScript);
+        }
+        
+        // Event section CMS integration
+        // In a real implementation, this would fetch data from a CMS
+        setTimeout(() => {
+            const eventsList = document.getElementById('events-list');
+            eventsList.innerHTML = `
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">OCT</span>
+                    </div>
+                    <div class="event-content">
+                        <h4>Web Development Workshop</h4>
+                        <div class="event-time">
+                            <i class="far fa-clock"></i>
+                            <span>10:00 AM - 4:00 PM</span>
                         </div>
-                        <div class="event-content">
-                            <h4>Web Development Workshop</h4>
-                            <div class="event-time">
-                                <i class="far fa-clock"></i>
-                                <span>10:00 AM - 4:00 PM</span>
-                            </div>
-                            <div class="event-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Tech Hub Conference Center</span>
-                            </div>
-                            <p>Join us for a full-day workshop on modern web development techniques, including React, Vue.js, and performance optimization.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn btn-primary">Register Now</a>
-                                <a href="#" class="btn btn-outline">Add to Calendar</a>
-                            </div>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tech Hub Conference Center</span>
+                        </div>
+                        <p>Join us for a full-day workshop on modern web development techniques, including React, Vue.js, and performance optimization.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary">Register Now</a>
+                            <a href="#" class="btn btn-outline">Add to Calendar</a>
                         </div>
                     </div>
-                    
-                    <div class="event-item">
-                        <div class="event-date">
-                            <span class="day">28</span>
-                            <span class="month">OCT</span>
+                </div>
+                
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">28</span>
+                        <span class="month">OCT</span>
+                    </div>
+                    <div class="event-content">
+                        <h4>UX Design Conference</h4>
+                        <div class="event-time">
+                            <i class="far fa-clock"></i>
+                            <span>9:00 AM - 5:00 PM</span>
                         </div>
-                        <div class="event-content">
-                            <h4>UX Design Conference</h4>
-                            <div class="event-time">
-                                <i class="far fa-clock"></i>
-                                <span>9:00 AM - 5:00 PM</span>
-                            </div>
-                            <div class="event-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Design Innovation Center</span>
-                            </div>
-                            <p>Learn from top UX designers about creating intuitive user experiences, conducting effective user research, and implementing design systems.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn btn-primary">Register Now</a>
-                                <a href="#" class="btn btn-outline">Add to Calendar</a>
-                            </div>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Design Innovation Center</span>
+                        </div>
+                        <p>Learn from top UX designers about creating intuitive user experiences, conducting effective user research, and implementing design systems.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary">Register Now</a>
+                            <a href="#" class="btn btn-outline">Add to Calendar</a>
                         </div>
                     </div>
-                    
-                    <div class="event-item">
-                        <div class="event-date">
-                            <span class="day">05</span>
-                            <span class="month">NOV</span>
+                </div>
+                
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">05</span>
+                        <span class="month">NOV</span>
+                    </div>
+                    <div class="event-content">
+                        <h4>Tech Leadership Summit</h4>
+                        <div class="event-time">
+                            <i class="far fa-clock"></i>
+                            <span>8:30 AM - 6:00 PM</span>
                         </div>
-                        <div class="event-content">
-                            <h4>Tech Leadership Summit</h4>
-                            <div class="event-time">
-                                <i class="far fa-clock"></i>
-                                <span>8:30 AM - 6:00 PM</span>
-                            </div>
-                            <div class="event-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Grand Convention Hall</span>
-                            </div>
-                            <p>A gathering of technology leaders to discuss the future of tech management, team building, and innovation strategies.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn btn-primary">Register Now</a>
-                                <a href="#" class="btn btn-outline">Add to Calendar</a>
-                            </div>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Grand Convention Hall</span>
+                        </div>
+                        <p>A gathering of technology leaders to discuss the future of tech management, team building, and innovation strategies.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary">Register Now</a>
+                            <a href="#" class="btn btn-outline">Add to Calendar</a>
                         </div>
                     </div>
-                `;
-            }, 1000);
-        });
+                </div>
+            `;
+        }, 1000);
     </script>
 </body>
 </html>
