@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--text);
   overflow-x: hidden;
@@ -38,7 +38,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://i.postimg.cc/ncsC9v3z/over2.png');
+  background-image: url("https://i.postimg.cc/ncsC9v3z/over2.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -214,7 +214,6 @@ section {
 .brand {
   display: flex;
   align-items: center;
-  gap: 15px;
 }
 
 .brand-icon {
@@ -233,7 +232,7 @@ section {
 }
 
 .university-name {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -242,7 +241,7 @@ section {
 }
 
 .club-name {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   background: linear-gradient(to right, var(--accent-bright), var(--accent-light));
@@ -259,9 +258,9 @@ section {
 }
 
 .nav-link {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
   font-size: 1rem;
   color: var(--text);
@@ -293,10 +292,10 @@ section {
 
 /* Main heading */
 .main-heading {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 4.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 3.5rem;
   font-weight: 800;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 20px 0;
   background: linear-gradient(to right, var(--accent-bright), #ffffff);
   -webkit-background-clip: text;
@@ -315,10 +314,10 @@ section {
 
 /*Sub-heading*/
 .sub-headingf {
-  font-family: 'Arial', sans-serif;
-  font-size: 2.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 20px 0;
   color: var(--text);
   letter-spacing: 3px;
@@ -327,10 +326,10 @@ section {
 }
 
 .sub-heading {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 30px 0 40px;
   color: var(--accent-bright);
   letter-spacing: 3px;
@@ -339,10 +338,10 @@ section {
   text-shadow: 0 0 15px rgba(13, 139, 255, 0.5);
 }
 .sub-heading1 {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 30px 0 40px;
   color: var(--accent-bright);
   letter-spacing: 3px;
@@ -366,10 +365,10 @@ section {
 .join-btn {
   margin-top: 30px;
   padding: 18px 50px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 2px;
   background: rgba(13, 139, 255, 0.15);
   color: var(--text);
@@ -449,10 +448,10 @@ section {
 }
 
 .section-header h2 {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--accent-bright);
   letter-spacing: 3px;
   position: relative;
@@ -514,11 +513,11 @@ section {
 }
 
 .card-title {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: var(--accent-bright);
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
 }
 
@@ -545,7 +544,7 @@ section {
 }
 
 .stat-value {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent-bright);
@@ -579,9 +578,9 @@ section {
   right: 20px;
   padding: 8px 15px;
   border-radius: 30px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 0.9rem;
   letter-spacing: 1px;
   z-index: 2;
@@ -665,7 +664,7 @@ section {
 }
 
 .contact-details h3 {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: var(--accent-bright);
@@ -744,10 +743,10 @@ section {
   color: var(--text);
   border: 2px solid var(--accent-bright);
   border-radius: 8px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s;
@@ -896,7 +895,7 @@ footer {
 }
 
 .sidebar-link {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   color: var(--text);
   text-decoration: none;
@@ -913,13 +912,13 @@ footer {
 /* Responsive design */
 @media (max-width: 1200px) {
   .main-heading {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 
 @media (max-width: 992px) {
   .main-heading {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   .top-bar {
     padding: 0 20px;
@@ -934,7 +933,7 @@ footer {
 
 @media (max-width: 768px) {
   .main-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .nav-links {
     display: none;
@@ -966,7 +965,7 @@ footer {
 
 @media (max-width: 576px) {
   .main-heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .club-name {
     font-size: 1.3rem;
@@ -1007,11 +1006,8 @@ footer {
   max-width:  1400px/* 3 columns and 2 gaps calc(3 * 280px + 2 * 35px);*/
 }
 .team-grid1 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 35px;
-  margin: 50px auto 0 auto;
-  max-width:  calc(3 * 280px + 2 * 35px);/* 3 columns and 2 gaps calc(3 * 280px + 2 * 35px);*/
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -1041,14 +1037,14 @@ footer {
 }
 
 .member-name {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   color: var(--accent-bright);
   margin-bottom: 10px;
 }
 
 .member-role {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -1090,16 +1086,38 @@ footer {
 /* NEW STYLES FOR GALLERY PAGE */
 .gallery-section {
   padding: 80px 5%;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
-.gallery-grid {
+
+.gallery-grid1 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 35px;
+  margin: 50px auto 0 auto;
+  max-width:  1200px;
+}
+.gallery-grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 35px;
+  margin: 50px auto 0 auto;
+  max-width:  1400px;
+}
+.gallery-grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
-  margin-top: 50px;
-  justify-content: center;
+  margin: 50px auto 0;
+  max-width: 1400px;
+  
+}
+
+.gallery-grid3 iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .gallery-item {
@@ -1142,7 +1160,7 @@ footer {
 }
 
 .gallery-title {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.3rem;
   color: white;
   margin-bottom: 8px;
@@ -1167,7 +1185,7 @@ footer {
   color: var(--text);
   border: 2px solid var(--accent-bright);
   border-radius: 8px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s;
@@ -1209,9 +1227,10 @@ footer {
 }
 /*------------------------------------------------------------*/
 /* NEW: Light mode color variables */
-[data-theme="light"] {
+
+[data-theme="light"]:not(.hero-section):not(.top-bar):not(.hero-section *) {
   --primary: #f0f4f8;
-  --secondary: #e1e8f0;
+  --secondary: #f0f4f8;
   --accent: #0d8bff;
   --accent-light: #4da6ff;
   --accent-bright: #0077cc;
@@ -1221,23 +1240,45 @@ footer {
   --glass-border: rgba(0, 0, 0, 0.1);
 }
 
-/* NEW: Light mode specific adjustments */
-[data-theme="light"] .dark-overlay {
-  background: rgba(255, 255, 255, 0.2); 
+/* Light mode top bar override */
+[data-theme="light"] .top-bar {
+  --primary: #f0f4f8;        
+  --secondary: #f0f4f8;
+  --text: #1a1a1a;
+  --text-secondary: #333333;
+  --glass: rgba(150, 160, 170, 0.5);     /* rgba(154, 161, 170, 0.5) rgba(230, 235, 240, 0.5)*/
+  --glass-border: rgba(0, 0, 0, 0.1); 
 }
 
-[data-theme="light"] .quantum-overlay {
-  background: 
-    radial-gradient(circle at center, rgba(13, 139, 255, 0.05) 0%, transparent 70%),
-    repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(0, 86, 210, 0.1) 2px);
-  opacity: 0.3;
+[data-theme="light"] .nav-link,
+[data-theme="light"] .sidebar-link {
+  color: #ecf0f1;
 }
 
-[data-theme="light"] .digital-grid {
-  background-image: 
-    linear-gradient(rgba(13, 139, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13, 139, 255, 0.1) 1px, transparent 1px);
-  opacity: 0.3;
+
+/* Ensure hero section, topbar and their children always use dark mode variables */
+.hero-section,
+.top-bar,
+.hero-section *,
+.top-bar * {
+  --primary: #121212;
+  --secondary: #121212;
+  --accent: #0d8bff;
+  --accent-light: #4da6ff;
+  --accent-bright: #00ccff;
+  --text: #ffffff;
+  --text-secondary: #e0f0ff;
+  --glass: rgba(15, 15, 15, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+/* Adjustments for non-hero sections */
+[data-theme="light"] #about::before,
+[data-theme="light"] #events::before,
+[data-theme="light"] #contact::before,
+[data-theme="light"] #team-section::before,
+[data-theme="light"] #gallery-section::before {
+  opacity: 0.05;
 }
 
 [data-theme="light"] .card,
@@ -1273,65 +1314,6 @@ footer {
   box-shadow: 0 0 10px rgba(13, 139, 255, 0.3);
 }
 
-[data-theme="light"] .top-bar {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  padding: 0 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 20;
-  background: var(--glass);
-  background-color: rgba(255, 255, 255, 0.4); /* Black with 40% opacity */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* optional */
-  backdrop-filter: blur(5px); /* optional for frosted glass effect */
-}
-[data-theme="light"] .sub-headingf {
-  font-family: 'Arial', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 20px 0;
-  color: linear-gradient(to right, #000000, #0c1b2c);
-  letter-spacing: 3px;
-  line-height: 1.1;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
-[data-theme="light"] .sub-heading {
-  background: linear-gradient(to right, #000000, #1a123d);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: #333333;
-}
-[data-theme="light"] .sub-heading1 {
-  font-family: 'Arial', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 30px 0 40px;
-  color: linear-gradient(to right, #000000, #0c1b2c);
-  letter-spacing: 3px;
-  line-height: 1.1;
-  min-height: 50px;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-[data-theme="light"] .main-heading {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 4.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin: 20px 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: linear-gradient(to right, #000000, #000000);
-  letter-spacing: 3px;
-  line-height: 1.1;
-  animation: textGlow 3s infinite alternate;
-}
-
 [data-theme="light"] .join-btn,
 [data-theme="light"] .submit-btn,
 [data-theme="light"] .back-btn {
@@ -1350,28 +1332,10 @@ footer {
   color: var(--accent);
 }
 
-[data-theme="light"] .nav-link,
-[data-theme="light"] .sidebar-link {
-  color: var(--text);
-}
-
-[data-theme="light"] .club-name {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  background: linear-gradient(to right, var(--accent), #1a123d);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: 2px;
-}
-
 /* Smooth transition for theme switching */
 body, .card, .contact-card, .contact-form, .team-member, 
 .stat-item, .social-link, .gallery-overlay, .join-btn,
-.submit-btn, .back-btn, .top-bar {
+.submit-btn, .back-btn {
   transition: background-color 0.5s ease, color 0.5s ease, 
               border-color 0.5s ease, box-shadow 0.5s ease;
-
 }
-
