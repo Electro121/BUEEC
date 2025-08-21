@@ -910,37 +910,95 @@ footer {
 }
 
 /* Responsive design */
-/* 🔹 Base scalable typography */
+/* =============================
+   🔹 Scalable Typography
+   ============================= */
 .main-heading {
-  font-size: clamp(1.5rem, 5vw, 3.5rem); /* scales between 1.5rem and 3.5rem */
+  font-size: clamp(1.4rem, 3.5vw, 2.8rem);
 }
 
 .section-header h2 {
-  font-size: clamp(1.2rem, 3vw, 2.2rem); /* flexible section headings */
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
 }
 
 .sub-heading,
 .sub-headingf {
-  font-size: clamp(1rem, 2.5vw, 1.8rem); /* flexible subheadings */
+  font-size: clamp(1rem, 2vw, 1.6rem);
 }
 
 .club-name {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .nav-link {
-  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
 }
 
 .join-btn {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  padding: clamp(10px, 2vw, 15px) clamp(25px, 5vw, 40px);
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  padding: clamp(10px, 1.5vw, 14px) clamp(24px, 4vw, 36px);
 }
 
-/* 🔹 Layout adjustments only */
+/* =============================
+   🔹 Scalable Layout
+   ============================= */
+.top-bar {
+  height: clamp(60px, 6vw, 100px);
+  padding: clamp(10px, 2vw, 20px) clamp(20px, 3vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(10px, 2vw, 30px);
+}
+
+.hamburger {
+  display: none;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(15px, 2vw, 35px);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(15px, 2vw, 35px);
+}
+
+#about .grid-container {
+  grid-auto-rows: auto;
+}
+
+.contact-form {
+  padding: clamp(15px, 3vw, 40px);
+}
+
+.contact-card {
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  flex-direction: row;
+  align-items: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(15px, 2vw, 30px);
+  margin-top: clamp(20px, 3vw, 50px);
+}
+
+/* =============================
+   🔹 Responsive Breakpoints
+   ============================= */
 @media (max-width: 992px) {
   .top-bar {
-    padding: 0 20px;
+    padding: clamp(10px, 2vw, 20px) 20px;
   }
   .nav-links {
     gap: 15px;
@@ -954,9 +1012,7 @@ footer {
   .hamburger {
     display: block;
   }
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
+  .contact-container,
   .grid-container {
     grid-template-columns: 1fr;
   }
