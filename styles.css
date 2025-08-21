@@ -92,7 +92,7 @@ section {
 }
 
 .slide:nth-child(1) {
-  background-image: url('https://i.postimg.cc/N0GyMZSh/Club-Fair-Spring-2025.jpg');
+  background-image: url('https://i.postimg.cc/xChq68CY/Panel-in-Automatize.jpg');
   animation-delay: 0s;
 }
 
@@ -107,7 +107,7 @@ section {
 }
 
 .slide:nth-child(4) {
-  background-image: url('https://i.postimg.cc/xChq68CY/Panel-in-Automatize.jpg');
+  background-image: url('https://i.postimg.cc/N0GyMZSh/Club-Fair-Spring-2025.jpg');
   animation-delay: 12s;
 }
 
@@ -1388,3 +1388,4 @@ body, .card, .contact-card, .contact-form, .team-member,
               border-color 0.5s ease, box-shadow 0.5s ease;
 
 }
+
