@@ -910,43 +910,49 @@ footer {
 }
 
 /* Responsive design */
-@media (max-width: 1200px) {
-  .main-heading {
-    font-size: 3.5rem;
-  }
+/* 🔹 Base scalable typography */
+.main-heading {
+  font-size: clamp(1.5rem, 5vw, 3.5rem); /* scales between 1.5rem and 3.5rem */
 }
 
+.section-header h2 {
+  font-size: clamp(1.2rem, 3vw, 2.2rem); /* flexible section headings */
+}
+
+.sub-heading,
+.sub-headingf {
+  font-size: clamp(1rem, 2.5vw, 1.8rem); /* flexible subheadings */
+}
+
+.club-name {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.nav-link {
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+}
+
+.join-btn {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  padding: clamp(10px, 2vw, 15px) clamp(25px, 5vw, 40px);
+}
+
+/* 🔹 Layout adjustments only */
 @media (max-width: 992px) {
-  .main-heading {
-    font-size: 3rem;
-  }
   .top-bar {
     padding: 0 20px;
   }
   .nav-links {
     gap: 15px;
   }
-  .section-header h2 {
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .main-heading {
-    font-size: 2.5rem;
-  }
   .nav-links {
     display: none;
   }
   .hamburger {
     display: block;
-  }
-  .join-btn {
-    font-size: 1.2rem;
-    padding: 15px 40px;
-  }
-  .sub-headingf, .sub-heading {
-    font-size: 1.8rem;
   }
   .contact-container {
     grid-template-columns: 1fr;
@@ -964,21 +970,6 @@ footer {
 }
 
 @media (max-width: 576px) {
-  .main-heading {
-    font-size: 2rem;
-  }
-  .club-name {
-    font-size: 1.3rem;
-  }
-  .nav-link {
-    font-size: 0.9rem;
-  }
-  .sub-headingf, .sub-heading {
-    font-size: 1.5rem;
-  }
-  .section-header h2 {
-    font-size: 2rem;
-  }
   .contact-form {
     padding: 25px;
   }
@@ -990,6 +981,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 
 /* NEW STYLES FOR ABOUT US PAGE */
 .team-section {
@@ -1338,4 +1330,5 @@ body, .card, .contact-card, .contact-form, .team-member,
 .submit-btn, .back-btn {
   transition: background-color 0.5s ease, color 0.5s ease, 
               border-color 0.5s ease, box-shadow 0.5s ease;
+
 }
