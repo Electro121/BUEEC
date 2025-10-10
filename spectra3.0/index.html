@@ -500,6 +500,153 @@
             box-shadow: 0 0 15px var(--accent-primary);
         }
 
+        .timeline {
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        margin: 80px auto;
+        }
+
+        .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, #00b7ff, #ff00c8, #ffa500);
+        border-radius: 10px;
+        }
+
+        .event {
+        position: relative;
+        width: 45%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 20px 25px;
+        margin: 60px 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .event.left {
+        left: 0;
+        }
+
+        .event.right {
+        left: 55%;
+        }
+
+        .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+        }
+
+        .icon.registration {
+        background: linear-gradient(135deg, #00b7ff, #00e5ff);
+        }
+
+        .icon.results {
+        background: linear-gradient(135deg, #ff00c8, #ff5edb);
+        }
+
+        .icon.finale {
+        background: linear-gradient(135deg, #ff9800, #ffc107);
+        }
+
+        .event h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        }
+
+        .event p {
+        margin: 5px 0 0;
+        font-size: 0.9rem;
+        color: #d6d6d6;
+        }
+
+        .event a {
+        color: #00eaff;
+        text-decoration: none;
+        font-weight: 500;
+        }
+
+        .title {
+        text-align: center;
+        margin-bottom: 60px;
+        }
+
+        .title h2 {
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 700;
+        }
+
+        .title p {
+        font-size: 1rem;
+        color: #d0cde1;
+        }
+
+        .participants {
+        text-align: center;
+        padding: 80px 20px;
+        }
+
+        .participants h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 50px;
+        }
+
+        .participants-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        flex-wrap: wrap;
+        }
+
+        .participant {
+        text-align: center;
+        width: 220px;
+        }
+
+        .participant i {
+        font-size: 48px;
+        margin-bottom: 15px;
+        display: inline-block;
+        }
+
+        .university i {
+        color: #00eaff;
+        }
+
+        .college i {
+        color: #b388ff;
+        }
+
+        .innovators i {
+        color: #ff7ac4;
+        }
+
+        .participant p {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        margin: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -641,13 +788,57 @@
                     </a>
                 </div>
             </section>
+            <section id="event-timeline" style="padding:80px 20px; text-align:center; background:transparent; position:relative; z-index:10;">
+                <div class="title">
+                    <h2>Event Timeline</h2>
+                    <p>Important dates for Spectra 3.0</p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="event left">
+                    <h3>Registration</h3>
+                    <p><a href="#">11 Oct to 24 Oct, 2025</a></p>
+                    <p>Submit your application</p>
+                    </div>
+
+                    <div class="icon registration">👥</div>
+
+                    <div class="event right">
+                    <h3>Results</h3>
+                    <p><a href="#">04 Nov, 2025</a></p>
+                    </div>
+
+                    <div class="icon results">📅</div>
+
+                    <div class="event left">
+                    <h3>Grand Finale</h3>
+                    <p><a href="#">Saturday, 04 Nov 2025</a></p>
+                    <p>Multipurpose Hall, BRAC University</p>
+                    </div>
+                    <div class="icon finale">🏆</div>
+                </div>
+            </section>
+            <section id="participate" style="padding:80px 20px; text-align:center; background:transparent; position:relative; z-index:10;">
+                <h2 style="font-size:2rem; font-weight:700; margin-bottom:50px; color:white;">Who Can Participate</h2>
+                
+                <div style="display:flex; justify-content:center; align-items:center; gap:100px; flex-wrap:wrap;">
+                    <div style="text-align:center; width:220px;">
+                    <i class="fas fa-graduation-cap" style="font-size:48px; color:#b388ff; margin-bottom:15px;"></i>
+                    <p style="font-size:1rem; font-weight:500; color:white; margin:0;">Only BRAC University Students</p>
+                    </div>
+                </div>
+            </section>
+
+            <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+
         </main>
         <footer>
             <div class="footer-logo">
                 <img src="https://i.postimg.cc/MTW7cXgP/3-BRACU-White.png" alt="BRACU Logo">
                 <img src="https://i.postimg.cc/JhgQFRFQ/Logo-Logo-for-black-bg-1.png" alt="Spectra Logo">
             </div>
-            <p>BRACU EEE Club Robotics Competition &copy; 2025 | Spectra</p>
+            <p>BRACU EEE Club Robotics Competition &copy; 2025 | Spectra 3.0</p>
         </footer>
 
     </div>
@@ -748,7 +939,6 @@
     </script>
 </body>
 </html>
-
 
 
 
