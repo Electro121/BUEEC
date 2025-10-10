@@ -217,8 +217,8 @@ section {
 }
 
 .brand-icon {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   filter: drop-shadow(0 0 8px rgba(13, 139, 255, 0.5));
   transition: all 0.4s ease;
 }
@@ -1388,4 +1388,5 @@ body, .card, .contact-card, .contact-form, .team-member,
               border-color 0.5s ease, box-shadow 0.5s ease;
 
 }
+
 
